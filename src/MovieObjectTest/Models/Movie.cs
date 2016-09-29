@@ -15,7 +15,7 @@ namespace MovieObjectTest.Models
         public string Year { get; set; }
         public static Dictionary<string, string> GetMovie()
         {
-            var input = "braveheart";
+            var input = "argo";
             var client = new RestClient("http://www.omdbapi.com/");
             var request = new RestRequest("?t=" + input + "&y=&plot=short&r.json", Method.GET);
             var response = new RestResponse();
@@ -29,7 +29,7 @@ namespace MovieObjectTest.Models
                 {"Title:", movieJson.Title },
                 {"Year:", movieJson.Year }
             };
-            List<string> list = new List<string>(movieData.Keys);
+           // List<string> list = new List<string>(movieData.Keys);
             return movieData;
         }
         public static Task<IRestResponse> GetResponseContentAsync(RestClient theClient, RestRequest theRequest)
