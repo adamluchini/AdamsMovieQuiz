@@ -11,7 +11,7 @@ namespace MovieObjectTest.Controllers
     {
         public IActionResult Index()
         {
-            ViewBag.movie = MovieClass.GetMovie();
+            ViewBag.movieResult = MovieClass.GetMovie();
             return View();
         }
     }
