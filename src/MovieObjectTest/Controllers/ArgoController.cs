@@ -7,7 +7,7 @@ using MovieObjectTest.Models;
 
 namespace MovieObjectTest.Controllers
 {
-    public class HomeController : Controller
+    public class ArgoController : Controller
     {
         public IActionResult Index()
         {

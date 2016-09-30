@@ -7,11 +7,11 @@ using MovieObjectTest.Models;
 
 namespace MovieObjectTest.Controllers
 {
-    public class HomeController : Controller
+    public class BraveHeartController : Controller
     {
         public IActionResult Index()
         {
-            ViewBag.movieResult = ArgoClass.GetMovie();
+            ViewBag.movieResult = BraveHeartClass.GetMovie();
             return View();
         }
     }
