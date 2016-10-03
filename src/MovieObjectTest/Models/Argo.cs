@@ -17,6 +17,7 @@ namespace MovieObjectTest.Models
         public string Genre { get; set; }
         public string Actors { get; set; }
         public string Plot { get; set; }
+
         public static Dictionary<string, string> GetMovie()
         {
             
@@ -38,7 +39,9 @@ namespace MovieObjectTest.Models
                 {"Actors", movieJsonArgo.Actors },
                 {"Plot", movieJsonArgo.Plot }
             };
+
             return movieDataArgo;
+
             // List<string> list = new List<string>(movieData.Keys);
         }
         public static Task<IRestResponse> GetResponseContentAsync(RestClient theClient, RestRequest theRequest)
