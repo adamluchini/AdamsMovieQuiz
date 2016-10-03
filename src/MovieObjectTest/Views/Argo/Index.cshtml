@@ -3,15 +3,17 @@
 
 
 
-<h2>Answer steps</h2>
-<h4 class="display-view">Display view</h4>
+
+<h1>Quiz 1</h1>
+<button class="clue1">Clue #1</button>
 <div id="argo-set-1"></div>
-<h4 class="display-view">Display view</h4>
+<button class="clue2">Clue #2</button>
 <div id="argo-set-2"></div>
+
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $('.display-view').click(function () {
+        $('.clue1').click(function () {
             $.ajax({
                 type: 'GET',
                 dataType: 'html',
@@ -21,7 +23,7 @@
                 }
             });
         });
-        $('.display-view').click(function () {
+        $('.clue2').click(function () {
             $.ajax({
                 type: 'GET',
                 dataType: 'html',
