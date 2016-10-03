@@ -13,6 +13,10 @@ namespace MovieObjectTest.Models
     {
         public string Title { get; set; }
         public string Year { get; set; }
+        public string Director { get; set; }
+        public string Genre { get; set; }
+        public string Actors { get; set; }
+        public string Plot { get; set; }
         public static Dictionary<string, string> GetMovie()
         {
             
@@ -24,11 +28,15 @@ namespace MovieObjectTest.Models
             {
                 responseArgo = await GetResponseContentAsync(clientArgo, requestArgo) as RestResponse;
             }).Wait();
-            BraveHeartClass movieJsonArgo = JsonConvert.DeserializeObject<BraveHeartClass>(responseArgo.Content);
+            ArgoClass movieJsonArgo = JsonConvert.DeserializeObject<ArgoClass>(responseArgo.Content);
             Dictionary<string, string> movieDataArgo = new Dictionary<string, string>()
             {
-                {"Title:", movieJsonArgo.Title },
-                {"Year:", movieJsonArgo.Year }
+                {"Title", movieJsonArgo.Title },
+                {"Year", movieJsonArgo.Year },
+                {"Director", movieJsonArgo.Director },
+                {"Genre", movieJsonArgo.Genre },
+                {"Actors", movieJsonArgo.Actors },
+                {"Plot", movieJsonArgo.Plot }
             };
             return movieDataArgo;
             // List<string> list = new List<string>(movieData.Keys);

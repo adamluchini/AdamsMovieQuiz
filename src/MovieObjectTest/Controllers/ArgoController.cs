@@ -11,6 +11,15 @@ namespace MovieObjectTest.Controllers
     {
         public IActionResult Index()
         {
+            return View();
+        }
+        public IActionResult ArgoAnswer()
+        {
+            ViewBag.movieResult = ArgoClass.GetMovie();
+            return View();
+        }
+        public IActionResult ArgoAnswer2()
+        {
             ViewBag.movieResult = ArgoClass.GetMovie();
             return View();
         }
