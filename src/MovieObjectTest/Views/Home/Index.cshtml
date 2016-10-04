@@ -1,9 +1,64 @@
-﻿<h2>Choose below</h2>
+﻿<html>
+<head>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+</head>
+<body>
+    @using System.Security.Claims
 
-<form method="get" action="/Argo/Index/">
-    <input type="submit" value="Movie 1" />
-</form>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <h2>Oh hello, @User.Identity.Name, please click a button to start a quiz.</h2>
 
-<form method="get" action="/Braveheart/Index/">
-    <input type="submit" value="Movie 2" />
-</form>
+        @using (Html.BeginForm("LogOff", "Home"))
+        {
+            <input type="submit" class="btn btn-default" value="Logoff" />
+        }
+
+        <div class="container">
+            <h2>Choose below</h2>
+            <form method="get" action="/Argo/Index/">
+                <input type="submit" class="btn btn-success" value="Movie 1" />
+            </form>
+
+            <form method="get" action="/Braveheart/Index/">
+                <input type="submit" class="btn btn-success" value="Movie 2" />
+            </form>
+        </div>
+    }
+    else
+    {
+        <h2>Authentication with Identity</h2>
+        <button class="display-register">Click here to register</button>
+        <div id="register-form"></div>
+        <button class="display-login">Click here to login</button>
+        <div id="login-form"></div>
+        <hr />
+        <script type="text/javascript">
+
+                $('.display-login').click(function () {
+                    $.ajax({
+                        type: 'GET',
+                        dataType: 'html',
+                        url: '@Url.Action("Login")',
+                        success: function (result) {
+                            $('#login-form').html(result);
+                        }
+                    });
+                });
+
+                $('.display-register').click(function () {
+                    $.ajax({
+                        type: 'GET',
+                        dataType: 'html',
+                        url: '@Url.Action("Register")',
+                        success: function (result) {
+                            $('#register-form').html(result);
+                        }
+                    });
+                });
+
+        </script>
+    }
+</body>
+</html>
