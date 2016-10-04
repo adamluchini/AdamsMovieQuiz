@@ -21,10 +21,16 @@ namespace MovieObjectTest.Models
 
         public static Dictionary<string, string> GetMovie()
         {
+            string[] movieList = { "argo", "braveheart" };
+            var input="";
+            for(var i =0; i<movieList.Length; i++)
+            {
+                input = movieList[0];
+                input = movieList[1];
+            }
             
-            var inputArgo = "argo";
             var clientArgo = new RestClient("http://www.omdbapi.com/");
-            var requestArgo = new RestRequest("?t=" + inputArgo + "&y=&plot=short&r.json", Method.GET);
+            var requestArgo = new RestRequest("?t=" + input + "&y=&plot=short&r.json", Method.GET);
             var responseArgo = new RestResponse();
             Task.Run(async () =>
             {
