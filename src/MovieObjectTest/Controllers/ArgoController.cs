@@ -40,5 +40,10 @@ namespace MovieObjectTest.Controllers
                 return View("Incorrect");
             }
         }
+        public IActionResult Reveal()
+        {
+            ViewBag.movieResult = ArgoClass.GetMovie();
+            return View("Reveal");
+        }
     }
 }

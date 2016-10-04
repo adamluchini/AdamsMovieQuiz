@@ -1,3 +1,15 @@
 ﻿@model MovieObjectTest.Models.ArgoClass
 <h3>A brief plot: @ViewBag.movieResult["Plot"]</h3>
-
+<button class="finalclue">Give Up?</button>
+<script type="text/javascript">
+    $('.finalclue').click(function () {
+        $.ajax({
+            type: 'GET',
+            dataType: 'html',
+            url: '@Url.Action("Reveal")',
+            success: function (result) {
+                $('#argo-final').html(result);
+            }
+        });
+    });
+</script>
