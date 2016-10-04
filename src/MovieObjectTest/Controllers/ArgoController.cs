@@ -7,7 +7,7 @@ using MovieObjectTest.Models;
 
 namespace MovieObjectTest.Controllers
 {
-    public class ArgoController : Controller
+    public class Movie1 : Controller
     {
         public IActionResult Index()
         {
@@ -31,8 +31,13 @@ namespace MovieObjectTest.Controllers
         public IActionResult Guess(string userguess)
         {
             ViewBag.movieResult = ArgoClass.GetMovie();
-            if (userguess.ToLower() == "argo")
+            if (userguess == null)
             {
+                return View("Reveal");
+            }
+            else if (userguess.ToLower() == "argo")
+            {
+                
                 return View("Correct");
             }
             else

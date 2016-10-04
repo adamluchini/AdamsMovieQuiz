@@ -7,7 +7,7 @@ using MovieObjectTest.Models;
 
 namespace MovieObjectTest.Controllers
 {
-    public class MementoController : Controller
+    public class Movie2 : Controller
     {
         public IActionResult Index()
         {
@@ -31,7 +31,11 @@ namespace MovieObjectTest.Controllers
         public IActionResult Guess(string userguess)
         {
             ViewBag.movieResult = MementoClass.GetMovie();
-            if (userguess.ToLower() == "memento")
+            if (userguess == null)
+            {
+                return View("Reveal");
+            }
+            else if (userguess.ToLower() == "memento")
             {
                 return View("Correct");
             }

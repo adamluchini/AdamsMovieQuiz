@@ -12,6 +12,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MovieObjectTest", "src\MovieObjectTest\MovieObjectTest.xproj", "{9E3D75F0-29FB-4AEB-9936-874DDD78718F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0CE45D7E-8837-492D-A557-D2EC78EB01F0}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MovieObjectTest.Tests", "MovieObjectTest.Tests\MovieObjectTest.Tests.xproj", "{CF6C1A76-A83A-47F6-9A0A-B11BA6D0B724}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,11 +26,16 @@ Global
 		{9E3D75F0-29FB-4AEB-9936-874DDD78718F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E3D75F0-29FB-4AEB-9936-874DDD78718F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E3D75F0-29FB-4AEB-9936-874DDD78718F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF6C1A76-A83A-47F6-9A0A-B11BA6D0B724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF6C1A76-A83A-47F6-9A0A-B11BA6D0B724}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF6C1A76-A83A-47F6-9A0A-B11BA6D0B724}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF6C1A76-A83A-47F6-9A0A-B11BA6D0B724}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{9E3D75F0-29FB-4AEB-9936-874DDD78718F} = {DF5E83CB-4785-4952-8F36-E96E72793CB6}
+		{CF6C1A76-A83A-47F6-9A0A-B11BA6D0B724} = {0CE45D7E-8837-492D-A557-D2EC78EB01F0}
 	EndGlobalSection
 EndGlobal
