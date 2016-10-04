@@ -1,13 +1,15 @@
-﻿@model MovieObjectTest.Models.ArgoClass
+﻿@model MovieObjectTest.Models.MementoClass
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 
 <h1>Quiz 1</h1>
 <button class="clue1">Clue #1</button>
-<div id="argo-set-1"></div>
+<div id="memento-set-1"></div>
 
-<div id="argo-set-2"></div>
+<div id="memento-set-2"></div>
 
-<div id="argo-set-3"></div>
+<div id="memento-set-2"></div>
+
+<div id="memento-set-3"></div>
 
 
 <form action="Guess" class="user-guess">
@@ -16,7 +18,7 @@
     <button type="submit">Submit</button>
 </form>
 <div id="correct"></div>
-<div id="argo-final"></div>
+<div id="memento-final"></div>
 
 
 <script type="text/javascript">
@@ -26,9 +28,9 @@
             $.ajax({
                 type: 'GET',
                 dataType: 'html',
-                url: '@Url.Action("ArgoAnswer")',
+                url: '@Url.Action("MementoAnswer")',
                 success: function (result) {
-                    $('#argo-set-1').html(result);
+                    $('#memento-set-1').html(result);
                 }
             });
         });

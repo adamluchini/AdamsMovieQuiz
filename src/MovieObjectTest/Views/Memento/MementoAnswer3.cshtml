@@ -1,6 +1,6 @@
-﻿@model MovieObjectTest.Models.ArgoClass
+﻿@model MovieObjectTest.Models.MementoClass
 <h3>A brief plot: @ViewBag.movieResult["Plot"]</h3>
-<h2>Those are all your clues, you have to take a guess!</h2>
+<button class="finalclue">Give Up?</button>
 <script type="text/javascript">
     $('.finalclue').click(function () {
         $.ajax({
@@ -8,7 +8,7 @@
             dataType: 'html',
             url: '@Url.Action("Reveal")',
             success: function (result) {
-                $('#argo-final').html(result);
+                $('#memento-final').html(result);
             }
         });
     });
