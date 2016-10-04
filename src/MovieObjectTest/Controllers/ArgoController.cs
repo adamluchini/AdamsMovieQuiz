@@ -31,7 +31,7 @@ namespace MovieObjectTest.Controllers
         public IActionResult Guess(string userguess)
         {
             ViewBag.movieResult = ArgoClass.GetMovie();
-            if (userguess == "argo")
+            if (userguess.ToLower() == "argo")
             {
                 return View("Correct");
             }
