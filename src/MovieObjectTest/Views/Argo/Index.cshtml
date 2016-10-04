@@ -6,12 +6,14 @@
 <div id="argo-set-1"></div>
 <button class="clue2">Clue #2</button>
 <div id="argo-set-2"></div>
-@using (Html.BeginForm())
-{
-    <label for="userguess">Your Guess</label>
-    <input name="userguess" />
-    <input type="submit" />
-}
+
+
+<form action="Guess" class="user-guess">
+    <label for="userguess">Guess</label>
+    <input type="text" name="userguess" />
+    <button type="submit">Submit</button>
+</form>
+<div id="correct"></div>
 
 
 <script type="text/javascript">
@@ -33,6 +35,19 @@
                 url: '@Url.Action("ArgoAnswer2")',
                 success: function (result) {
                     $('#argo-set-2').html(result);
+                }
+            });
+        });
+        $('.user-guess').submit(function (event) {
+            event.preventDefault();
+            $.ajax({
+                type: 'GET',
+                data: $(this).serialize(),
+                //data: $("userguess").val(),
+                dataType: 'html',
+                url: '@Url.Action("Guess")',
+                success: function (result) {
+                    $('#correct').html(result);
                 }
             });
         });
