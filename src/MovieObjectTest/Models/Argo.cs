@@ -17,6 +17,7 @@ namespace MovieObjectTest.Models
         public string Genre { get; set; }
         public string Actors { get; set; }
         public string Plot { get; set; }
+        public string Poster { get; set; }
 
         public static Dictionary<string, string> GetMovie()
         {
@@ -37,7 +38,8 @@ namespace MovieObjectTest.Models
                 {"Director", movieJsonArgo.Director },
                 {"Genre", movieJsonArgo.Genre },
                 {"Actors", movieJsonArgo.Actors },
-                {"Plot", movieJsonArgo.Plot }
+                {"Plot", movieJsonArgo.Plot },
+                {"Poster", movieJsonArgo.Poster }
             };
 
             return movieDataArgo;

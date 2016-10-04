@@ -25,6 +25,7 @@ namespace MovieObjectTest.Controllers
         }
         public IActionResult Guess(string userguess)
         {
+            ViewBag.movieResult = ArgoClass.GetMovie();
             if (userguess == "argo")
             {
                 return View("Correct");
