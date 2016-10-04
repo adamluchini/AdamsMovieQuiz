@@ -23,6 +23,11 @@ namespace MovieObjectTest.Controllers
             ViewBag.movieResult = ArgoClass.GetMovie();
             return View();
         }
+        public IActionResult ArgoAnswer3()
+        {
+            ViewBag.movieResult = ArgoClass.GetMovie();
+            return View();
+        }
         public IActionResult Guess(string userguess)
         {
             ViewBag.movieResult = ArgoClass.GetMovie();
@@ -32,7 +37,7 @@ namespace MovieObjectTest.Controllers
             }
             else
             {
-                return View();
+                return View("Incorrect");
             }
         }
     }

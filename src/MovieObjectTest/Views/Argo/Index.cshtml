@@ -4,8 +4,12 @@
 <h1>Quiz 1</h1>
 <button class="clue1">Clue #1</button>
 <div id="argo-set-1"></div>
-<button class="clue2">Clue #2</button>
+
 <div id="argo-set-2"></div>
+
+<div id="argo-set-2"></div>
+
+<div id="argo-set-3"></div>
 
 
 <form action="Guess" class="user-guess">
@@ -28,16 +32,7 @@
                 }
             });
         });
-        $('.clue2').click(function () {
-            $.ajax({
-                type: 'GET',
-                dataType: 'html',
-                url: '@Url.Action("ArgoAnswer2")',
-                success: function (result) {
-                    $('#argo-set-2').html(result);
-                }
-            });
-        });
+        
         $('.user-guess').submit(function (event) {
             event.preventDefault();
             $.ajax({
