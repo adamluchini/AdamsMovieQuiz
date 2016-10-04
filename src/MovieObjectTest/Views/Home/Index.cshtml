@@ -28,15 +28,17 @@
     }
     else
     {
-        <h2>Authentication with Identity</h2>
-        <button class="display-register">Click here to register</button>
-        <div id="register-form"></div>
-        <button class="display-login">Click here to login</button>
-        <div id="login-form"></div>
+        <div class="jumbotron">
+            <h2>Authentication with Identity</h2>
+            <button id="display-register" class="btn btn-default">Click here to register</button>
+            <button id="display-login" class="btn btn-default">Click here to login</button>
+            <div id="register-form"></div>
+            <div id="login-form"></div>
+        </div>
         <hr />
         <script type="text/javascript">
 
-                $('.display-login').click(function () {
+                $('#display-login').click(function () {
                     $.ajax({
                         type: 'GET',
                         dataType: 'html',
@@ -47,7 +49,7 @@
                     });
                 });
 
-                $('.display-register').click(function () {
+                $('#display-register').click(function () {
                     $.ajax({
                         type: 'GET',
                         dataType: 'html',
