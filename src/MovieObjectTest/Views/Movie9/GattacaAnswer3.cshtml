@@ -1,4 +1,4 @@
-﻿@model MovieObjectTest.Models.BridesmaidsClass
+﻿@model MovieObjectTest.Models.GattacaClass
 <h3>The plot: @ViewBag.movieResult["Plot"]</h3>
 <h2>Those are all your clues, you have to take a guess!</h2>
 <script type="text/javascript">
@@ -8,7 +8,7 @@
             dataType: 'html',
             url: '@Url.Action("Reveal")',
             success: function (result) {
-                $('#bridesmaids-final').html(result);
+                $('#gattaca-final').html(result);
             }
         });
     });
