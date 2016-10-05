@@ -1,0 +1,50 @@
+﻿@model MovieObjectTest.Models.DropDeadClass
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+<h1>Quiz 1</h1>
+<button class="clue1">Clue #1</button>
+<div id="dropdead-set-1"></div>
+
+<div id="dropdead-set-2"></div>
+
+<div id="dropdead-set-3"></div>
+
+
+<form action="Guess" class="user-guess">
+    <label for="userguess">Guess</label>
+    <input type="text" name="userguess" />
+    <button type="submit">Submit</button>
+</form>
+<div id="correct"></div>
+<div id="dropdead-final"></div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('.clue1').click(function () {
+            $.ajax({
+                type: 'GET',
+                dataType: 'html',
+                url: '@Url.Action("DropDeadAnswer")',
+                success: function (result) {
+                    $('#dropdead-set-1').html(result);
+                }
+            });
+        });
+        
+        $('.user-guess').submit(function (event) {
+            event.preventDefault();
+            $.ajax({
+                type: 'GET',
+                data: $(this).serialize(),
+                //data: $("userguess").val(),
+                dataType: 'html',
+                url: '@Url.Action("Guess")',
+                success: function (result) {
+                    $('#correct').html(result);
+                }
+            });
+        });
+    });
+</script>
