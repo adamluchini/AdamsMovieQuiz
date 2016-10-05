@@ -1,20 +1,23 @@
-﻿@{
-    ViewData["Title"] = "Log In";
-}
+﻿<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
-@using MovieObjectTest.ViewModels
+    @{
+        ViewData["Title"] = "Log In";
+    }
 
-@model LoginViewModel
+    @using MovieObjectTest.ViewModels
 
-<h2>Log in with your account</h2>
-<hr />
-@using (Html.BeginForm())
-{
-    @Html.LabelFor(m => m.Email)
-    @Html.TextBoxFor(m => m.Email)
+    @model LoginViewModel
+<div class="container">
+    <h2>Log in with your account</h2>
+    <hr />
+    @using (Html.BeginForm())
+    {
+        @Html.LabelFor(m => m.Email)
+        @Html.TextBoxFor(m => m.Email)
 
-    @Html.LabelFor(m => m.Password)
-    @Html.PasswordFor(m => m.Password)
+        @Html.LabelFor(m => m.Password)
+        @Html.PasswordFor(m => m.Password)
 
-    <input type="submit" value="Log in" class="btn btn-default" />
-}
+        <input type="submit" value="Log in" class="btn btn-default" />
+    }
+</div>

@@ -1,23 +1,22 @@
 ﻿@model MovieObjectTest.Models.BridesmaidsClass
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
-<h1>Quiz 1</h1>
-<button class="clue1">Clue #1</button>
-<div id="bridesmaids-set-1"></div>
+<div class="container">
+    <h1>Mystery Movie #4</h1>
+    <button class="clue1">Clue #1</button>
+    <div id="bridesmaids-set-1"></div>
+    <div id="bridesmaids-set-2"></div>
+    <div id="bridesmaids-set-3"></div>
 
-<div id="bridesmaids-set-2"></div>
-
-<div id="bridesmaids-set-3"></div>
-
-
-<form action="Guess" class="user-guess">
-    <label for="userguess">Guess</label>
-    <input type="text" name="userguess" />
-    <button type="submit">Submit</button>
-</form>
-<div id="correct"></div>
-<div id="bridesmaids-final"></div>
-
+    <form action="Guess" class="user-guess">
+        <label for="userguess">Guess</label>
+        <input type="text" name="userguess" />
+        <button type="submit">Submit</button>
+    </form>
+    <div id="correct"></div>
+    <div id="bridesmaids-final"></div>
+</div>
 
 <script type="text/javascript">
     $(document).ready(function () {

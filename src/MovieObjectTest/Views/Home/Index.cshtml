@@ -8,12 +8,14 @@
 
     @if (User.Identity.IsAuthenticated)
     {
-        <h2>Oh hello, @User.Identity.Name, please click a button to start a quiz.</h2>
+        <div class="container">
+            <h2>Oh hello, @User.Identity.Name, please click a button to start a quiz.</h2>
 
-        @using (Html.BeginForm("LogOff", "Home"))
-        {
-            <input type="submit" class="btn btn-default" value="Logoff" />
-        }
+            @using (Html.BeginForm("LogOff", "Home"))
+            {
+                <input type="submit" class="btn btn-default" value="Logoff" />
+            }
+        </div>
 
         <div class="container">
             <h2>Choose below</h2>
