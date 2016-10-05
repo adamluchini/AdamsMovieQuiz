@@ -1,0 +1,15 @@
+﻿@model MovieObjectTest.Models.WizardClass
+<h3>A brief plot: @ViewBag.movieResult["Plot"]</h3>
+<h2>Those are all your clues, you have to take a guess!</h2>
+<script type="text/javascript">
+    $('.finalclue').click(function () {
+        $.ajax({
+            type: 'GET',
+            dataType: 'html',
+            url: '@Url.Action("Reveal")',
+            success: function (result) {
+                $('#wizard-final').html(result);
+            }
+        });
+    });
+</script>
