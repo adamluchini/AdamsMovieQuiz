@@ -1,82 +1,66 @@
-# APP NAME TBD
+# Adam's Movie Quiz
 ### 10/06/2016
 
 # Epicodus Final Independent Project by Adam Luchini
 
 ## Description
 
-The Portland Weird Map is a geographical display of "weird" locations around Oregon's biggest city. In addition to typical features present in [Google Maps API](https://developers.google.com/maps/web/) applications (zooming, scrolling, street, and satellite views), the Portland Weird Map allows users to interact with how data points are displayed with category filtering. A form is also present if the user wants to contribute and add their own weird location to the map. All data the user inputs is stored and retrieved using Google's [Firebase](http://www.firebase.com). The ability to route a bike map between 2 and 5 locations is also available to the user. A list of locations is displayed by category and can be added to the route map by checking their individual boxes. Lastly, the map contains a Data Map that shows a color coded cluster map of bars in Multnomah County by neighborhood.
+Adam's Movie Quiz is a C# application containing a test on 10 movie titles. When a user clicks one of the 10 buttons, they are given a key clue one at a time to see if they can correctly guess the title. First, the year of release, genre, and director is given. Second, the top billed actors. And lastly, a brief plot. At any point, the user can guess and their answer is immediately determined whether it's correct or not. Adam's Movie Quiz retrieves all movie data by making API GET requests to [IMDb](http://www.imdb.com/). This was made possible by utilizing the unofficial and unaffiliated web API service [OMDb](http://www.omdbapi.com/), a project by [Brian Fritz](mailto:bfritz@fadingsignal.com/).
 
 ## Specifications
-The capabilities of the Portland Weird Map are as follows:
-* Upon opening, all locations are displayed on the page.
-  * Example: The index page loads without a predetermined filter and all location markers are present.
+The capabilities of Adam's Movie Quiz are as follows:
+* Users are able to create a user name and password, which is stored in a SQL database.
+  * Example: After clicking register, phillip@gmail.com is entered as an email and valid password.
 
-* Defined categories are represented by a unique marker.
-  * Example: With all categories being displayed, the "entertainment" category is given a yellow wizard hat marker to avoid excess clutter.
+* Users can log in after registering.
+  * Example: After clicking log in, "Welcome, phillip@gmail.com" is displayed on the index page.
 
-* Filters what category of locations are displayed on the map overlay.
-  * Example: A user is only interested in seeing the locations of weird museums. By clicking on the "museum" button, all categories that aren't classified as "museum" are displayed. In the same session, the "food" button can be clicked and all categories that aren't classified as "food" are displayed.
+* Users can select any of the 10 listed movies.
+  * Example: A user already tried Movie 1 and 2, so they want to try 3. Rather than stepping back through and playing 1 and 2 again, they can start off at 3 directly.
 
-* Filters are removed by clicking the "View All" button.
-  * Example: A user is done viewing weird hotels. After the "View All" button is clicked, all category markers return to the map.
+* Movie clues are given one at a time.
+  * Example: Clue 1 displays "Released in 1978, this Horror film was directed by John Carpenter" and also the button for Clue 2 if the user wants to see.
 
-* An information box on a specific location is displayed when a marker is clicked.
-  * Example: A user spots a purple landmark marker in the Kenton neighborhood. The icon is clicked and an info box displays: "The Paul Bunyan Statue" along with a brief description.
+* A user can guess the movie at any time.
+  * Example: A user knows the answer after Clue 2, "Starring Donald Pleasence, Jamie Lee Curtis, Tony Moran" and wants to guess. They type "Halloween" into the text box and hit submit.
 
-* Additional information on a location can be shown by clicking on the location name.
-  * Example: In the Paul Bunyan information pop up box, the location name is hyperlinked. Clicking it will deliver the user to http://www.roadsideamerica.com/tip/2557 in a new browser window, where more information on the statue can be accessed.
+* If the answer is correct, it is revealed as such.
+  * Example: After typing in "Halloween", a "That is correct!" page is displayed, along with the film's theatrical poster.
 
-* A user can jump to a Google Street View of locations.
-  * Example: The "street view" link on The Lovecraft's info box opens a new browser window to https://www.google.com/maps/place/The+Lovecraft+Bar/@45.5198995,-122.660748,3a,60y,264.84h,83.49t/data=!3m6!1e1!3m4!1sjg1TMbOEmnT9noFnfOBbzg!2e0!7i13312!8i6656!4m5!3m4!1s0x5495a0a65443d16b:0x7fc595154ea47646!8m2!3d45.5198985!4d-122.660942!6m1!1e1
+  * If the answer is incorrect, it is revealed as such and the correct answer is given.
+    * Example: After typing in "Nightmare on Elm Street", a "Sorry, the answer was Halloween" page is displayed, along with Halloween's theatrical poster.
 
-* New locations can be added.
-  * Example: A user thinks Cecil, the cat that hangs out at the Hawthorne Safeway is weird enough to be added to the map. To add it, the New Location button is clicked and the form is filled out with the necessary information.
-    * Name: Cecil the Safeway Cat
-    * Description: An adorable and friendly tabby cat that can usually be spotted roaming the parking lot of Safeway. On occasion, he can be found inside the store.
-    * Latitude: 45.511788
-    * Longitude: -122.636999
-    * Category: Store
-    * Website: http://www.lovemeow.com/cat-comes-to-safeway-store-every-morning-to-hang-out-with-customers-1608507927.html
-    * Street View Link: https://www.google.com/maps/@45.5120738,-122.6366276,3a,75y,238.93h,86.35t/data=!3m6!1e1!3m4!1s_YUSfVMSehHPcIAroirD1g!2e0!7i13312!8i6656
+* Guesses do not have to case sensitive.
+  * Example: Clues prompt the user to assume the movie is "Back to the Future", so they type in "back to the future". All answer are converted to lowercase so the answer will be judged as correct.
 
 ## Setup/Installation Requirements
 
 You will need the following properly installed on your computer.
 
-* [Git](http://git-scm.com/)
-* [Node.js](http://nodejs.org/) (with NPM)
-* [Bower](http://bower.io/)
-* [Ember CLI](http://ember-cli.com/)
+* [Microsoft Visual Studio 2015](https://www.visualstudio.com/downloads/)
+* [Windows PowerShell](http://go.microsoft.com/fwlink/?LinkId=293881)
+* [Microsoft SQL Server Management Studio](https://msdn.microsoft.com/en-us/library/mt238290.aspx)
+*
 
-* `git clone <repository-url>` this repository
-* change into the new directory
-* `npm install`
-* `bower install`
-
-* `ember server`
-* Visit Portland Weird Map at [http://localhost:4200](http://localhost:4200).
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
+* Clone this repository through GitHub by clicking the "Open in Visual Studio" prompt and follow the commands.
+* After successfully cloning, download the RestSharp.NetCore dependency from the NuGet Package Manager.
+* In PowerShell, update the registration database by navigating to the solution directory and enter "dotnet ef database update"
+* Click the run option in Visual Studio to run the applications
+* Register an email and password.
+* Enjoy and good luck!
 
 ### Technologies Used
 
-HTML5, CSS, JavaScript, Bootstrap.css, EmberJS, Google Maps API, Firebase, Leaflet
+C#, ASP.NET, Entity Framework, Bootstrap, HTML 5, CSS, AJAX, RestSharp.
+
+### Future Plans
+
+Creating a single movie class and pulling a variable from the home page based on a button click will lighten this bad boy up A LOT.
 
 ## Contact
 
-* [Sami Al-Jamal](https://github.com/SamiAljamal)
-* [Patrick Lipscomb](https://github.com/PatrickCLipscomb)
 * [Adam Luchini](https://github.com/adamluchini)
-* [George Olson](https://github.com/georgeolson92)
+
 
 ## License
 This software is licensed under the MIT license
